@@ -1,0 +1,45 @@
+# В конце EDA.ipynb добавить:
+from IPython.display import HTML
+import base64
+
+def create_summary_html():
+    html_content = f"""
+    <html>
+    <head>
+        <title>AI REA Ltd - EDA Report</title>
+        <style>
+            body {{ font-family: Arial, sans-serif; margin: 40px; }}
+            .header {{ background: #2c3e50; color: white; padding: 20px; border-radius: 10px; }}
+            .insight {{ background: #ecf0f1; padding: 15px; margin: 10px 0; border-radius: 5px; }}
+            .metric {{ font-size: 24px; font-weight: bold; color: #e74c3c; }}
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>🏢 AI REA Ltd - Анализ арендного рынка Москвы</h1>
+            <p>Релиз 1.0 - Exploratory Data Analysis</p>
+        </div>
+        
+        <h2>📊 Ключевые метрики</h2>
+        <div class="insight">
+            <span class="metric">{df.shape[0]:,}</span> объявлений<br>
+            <span class="metric">{df.shape[1]}</span> характеристик<br>
+            <span class="metric">{df['price_numeric'].median():,.0f} руб.</span> медианная цена
+        </div>
+        
+        <h2>🎯 Основные выводы</h2>
+        <div class="insight">
+            • Данные требуют очистки пропусков<br>
+            • Цены имеют широкий диапазон<br>
+            • Есть потенциал для feature engineering<br>
+            • Географический фактор значим
+        </div>
+    </body>
+    </html>
+    """
+    
+    with open('../releases/EDA.html', 'w', encoding='utf-8') as f:
+        f.write(html_content)
+
+create_summary_html()
+print("✅ HTML отчет создан: releases/EDA.html")
