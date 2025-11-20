@@ -1,4 +1,6 @@
 # Real-Estate 
+## WORKING WITH maxim2211max-source
+# https://github.com/maxim2211max-source
 # AI REA Ltd - Подготовка данных для ML модели цен на аренду
 
 ## 🎯 Цель проекта
