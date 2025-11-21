@@ -9,7 +9,7 @@ from PIL import Image
 import os
 
 # Загрузка данных
-df = pd.read_csv('/users/danilabalakin/Downloads/_data.csv')
+df = pd.read_csv('https://drive.google.com/uc?export=download&id=130KYOX8O4wrP_T8vdz2GfvJRQ03ONmE7')
 
 # Функция для очистки и преобразования цены
 def clean_price(price_str):
